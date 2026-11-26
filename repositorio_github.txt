@@ -1,0 +1,5 @@
+Nome do projeto: Trabalho4-Computacao-Paralela
+Autor: Bernardo Klein Heitz
+URL: https://github.com/bengo501/Trabalho4-Computacao-Paralela
+Branch: main
+Commit: 09762d147db7063e7910ad07323f62e59aa571e1
