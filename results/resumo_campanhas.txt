@@ -1,0 +1,56 @@
+========================================================================
+RESUMO COMPLETO DAS CAMPANHAS EXPERIMENTAIS — TRABALHO 4 (MPI)
+========================================================================
+Aluno:      Bernardo Klein Heitz
+Algoritmo:  Planchon e Darboux (2001) — modelo de fases paralelas
+Cluster:    Atlantica (LAD/PUCRS), particao LAD_geral, --exclusive
+Hardware:   Dual Intel Xeon E5520 (8 nucleos fisicos / 16 threads por no)
+Nos usados: atlantica07 (1 no), atlantica07..08 (2 nos), atlantica07..10 (4 nos)
+Compilacao: gcc / mpicc (Open MPI 4.1.1) -O3 -std=c11 -Wall -Wextra
+Total:      170 execucoes reais no cluster (120 oficiais + 50 de cargas)
+
+------------------------------------------------------------------------
+CAMPANHA 1 — OFICIAL (scripts/campanha.sbatch | Slurm Job 47684)
+------------------------------------------------------------------------
+Grade: N = 1792 (1792x1792), 10 repeticoes por ponto, 120 execucoes
+Equivalencia: 100% OK | iteracoes=2979 | celulas_alagadas=1161016 | volume_retido=3356079226
+Sequencial puro (1 no): T1 mediana = 46,034 s (min 45,998 s, max 46,126 s), s = 0,72%
+
+Equivalencia OK em todas as linhas: n=1792 iteracoes=2979 volume_retido=3356079226 celulas_alagadas=1161016
+Sequencial (N=10): T1=46.0335s  frac_seq(s)=0.007163
+
+versao     coletiva     P nos    med(s)       min       max       S  Amdahl      E     comp  ver_med  ver_min   espera    troca
+mpi        allreduce    1   1   45.9913   45.9079   46.0348    1.00    1.00  1.001  45.6214   0.0071   0.0071   0.0000   0.0064
+mpi        allreduce    2   1   24.1663   24.1245   24.2051    1.90    1.99  0.952  22.7573   0.9636   0.1214   0.8386   0.0984
+mpi        allreduce    4   1   14.7490   14.6980   14.8407    3.12    3.92  0.780  12.2024   2.0882   0.0578   2.0260   0.1228
+mpi        allreduce    8   1   11.9225   11.9015   11.9528    3.86    7.62  0.483  11.2123   0.1820   0.0747   0.1110   0.1741
+mpi        allreduce   16   2    5.5545    5.5383    5.6122    8.29   14.45  0.518   4.2182   0.7829   0.3033   0.4688   0.2050
+mpi        allreduce   32   4    3.1752    3.1598    3.2150   14.50   26.19  0.453   1.4580   1.1317   0.3792   0.7547   0.2199
+mpi        allreduce   64   4    3.5708    3.5400    3.6242   12.89   44.10  0.201   1.3816   1.4815   0.5985   0.9021   0.2320
+mpi        bcast        8   1   11.9466   11.9209   11.9849    3.85    7.62  0.482  11.2143   0.2095   0.1067   0.1011   0.1676
+mpi        bcast       16   2    6.5582    6.5136    6.6815    7.02   14.45  0.439   4.3102   1.6768   1.1466   0.5264   0.2193
+mpi        bcast       32   4    6.9348    6.8736    7.2116    6.64   26.19  0.207   1.5059   4.7285   3.5911   1.1393   0.3429
+mpi        bcast       64   4   13.4175   13.1161   15.0783    3.43   44.10  0.054   1.4107  11.2890  10.3896   0.9416   0.2298
+sequencial nenhuma      1   1   46.0335   45.9981   46.1261    1.00    1.00  1.000  45.7048   0.0000   0.0000   0.0000   0.0000
+
+------------------------------------------------------------------------
+CAMPANHA 2 — DIFERENTES CARGAS E TEMPOS (scripts/campanha_cargas.sbatch | Slurm Job 47702)
+------------------------------------------------------------------------
+Objetivo: avaliar sensibilidade a carga leve (N=1280) e pesada (N=2304)
+          nos mesmos 4 nos exclusivos (5 repeticoes por ponto, 50 execucoes).
+
+    N versao       P nos  iter    med(s)    min(s)    max(s)       S      E   v_min  espera
+ 1280 sequencial   1   1  2137   16.1230   16.1017   16.1471    1.00   1.00   0.000   0.000
+ 1280 mpi          8   1  2137    3.5940    3.5552    3.6245    4.49   0.56   0.031   0.239
+ 1280 mpi         16   2  2137    1.8572    1.8494    1.8659    8.68   0.54   0.094   0.481
+ 1280 mpi         32   4  2137    1.4507    1.4454    1.4649   11.11   0.35   0.307   0.334
+ 1280 mpi         64   4  2137    1.5709    1.5561    1.6130   10.26   0.16   0.369   0.423
+ 2304 sequencial   1   1  3841  102.6493  102.5104  102.8062    1.00   1.00   0.000   0.000
+ 2304 mpi          8   1  3841   25.3718   25.3293   25.4659    4.05   0.51   0.091   0.272
+ 2304 mpi         16   2  3841   13.6452   13.6171   13.6644    7.52   0.47   0.438   0.560
+ 2304 mpi         32   4  3841    6.3224    6.2832    6.3510   16.24   0.51   0.647   1.097
+ 2304 mpi         64   4  3841    7.2090    7.1506    7.3416   14.24   0.22   0.865   1.441
+
+Equivalencia verificada em 100% das 50 execucoes da Campanha 2:
+- N=1280: iteracoes=2137 volume_retido=1854688932 celulas_alagadas=565201
+- N=2304: iteracoes=3841 volume_retido=5971977398 celulas_alagadas=2035274

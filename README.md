@@ -21,7 +21,7 @@ Na versão paralela, o rank 0 gera o relevo Z e distribui faixas horizontais con
 
 src/           relevo.h, relevo.c, sequencial.c, fases_mpi.c, confere.c
 scripts/       campanha.sbatch, campanha_cargas.sbatch, escolhe_n.py, resumir.py
-results/       runs.csv, cargas.csv, raw/, raw_cargas/, slurm-*.out, lscpu.txt, nodes.txt, fig_*.png
+results/       runs.csv, cargas.csv, resumo_campanhas.txt, raw/, raw_cargas/, slurm-*.out, lscpu.txt, nodes.txt, fig_*.png
 relatorio/     relatorio.pdf
 apresentacao/  apresentacao.pptx, figuras/
 
