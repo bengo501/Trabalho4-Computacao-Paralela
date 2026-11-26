@@ -1,0 +1,1 @@
+resultado versao=mpi coletiva=allreduce p=1 n=1792 semente=20260401 iteracoes=2979 volume_retido=3356079226 celulas_alagadas=1161016 soma_cotas=55201776083 tempo=45.974069 comp_med=45.602945 comp_min=45.602945 comp_max=45.602945 verif_med=0.006938 verif_min=0.006938 verif_max=0.006938 espera_med=0.000000 troca_med=0.006479 troca_min=0.006479 troca_max=0.006479 extra_med=0.356563

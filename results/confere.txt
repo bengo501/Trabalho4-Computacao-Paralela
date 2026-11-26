@@ -1,0 +1,4 @@
+ok n=64 iteracoes=99 volume_retido=2823001 celulas_alagadas=704
+ok n=127 iteracoes=214 volume_retido=15683493 celulas_alagadas=3395
+ok n=200 iteracoes=346 volume_retido=34670351 celulas_alagadas=10705
+todos os testes de equivalencia passaram.

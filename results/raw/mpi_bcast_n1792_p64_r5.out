@@ -1,0 +1,1 @@
+resultado versao=mpi coletiva=bcast p=64 n=1792 semente=20260401 iteracoes=2979 volume_retido=3356079226 celulas_alagadas=1161016 soma_cotas=55201776083 tempo=13.116066 comp_med=1.409045 comp_min=0.763519 comp_max=2.038271 verif_med=11.002758 verif_min=10.053095 verif_max=11.613135 espera_med=0.949663 troca_med=0.225545 troca_min=0.134344 troca_max=0.586188 extra_med=0.471852

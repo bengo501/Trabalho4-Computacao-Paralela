@@ -1,0 +1,146 @@
+rm -rf bin
+mkdir -p bin
+cc -O3 -std=c11 -Wall -Wextra -c src/relevo.c -o bin/relevo.o
+cc -O3 -std=c11 -Wall -Wextra src/sequencial.c bin/relevo.o -o bin/sequencial -lrt
+mpicc -O3 -std=c11 -Wall -Wextra src/fases_mpi.c bin/relevo.o -o bin/fases_mpi
+cc -O3 -std=c11 -Wall -Wextra src/confere.c bin/relevo.o -o bin/confere
+atlantica[07-10]
+N oficial: 1792
+1792
+sequencial n=1792 rep=1
+sequencial n=1792 rep=2
+sequencial n=1792 rep=3
+sequencial n=1792 rep=4
+sequencial n=1792 rep=5
+sequencial n=1792 rep=6
+sequencial n=1792 rep=7
+sequencial n=1792 rep=8
+sequencial n=1792 rep=9
+sequencial n=1792 rep=10
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=1 nos=1 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=2 nos=1 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=4 nos=1 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=8 nos=1 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=16 nos=2 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=1
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=2
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=3
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=4
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=5
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=6
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=7
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=8
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=9
+mpi coletiva=allreduce n=1792 p=32 nos=4 bind=cores rep=10
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=1
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=2
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=3
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=4
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=5
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=6
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=7
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=8
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=9
+mpi coletiva=allreduce n=1792 p=64 nos=4 bind=threads rep=10
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=1
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=2
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=3
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=4
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=5
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=6
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=7
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=8
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=9
+mpi coletiva=bcast n=1792 p=8 nos=1 bind=cores rep=10
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=1
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=2
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=3
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=4
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=5
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=6
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=7
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=8
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=9
+mpi coletiva=bcast n=1792 p=16 nos=2 bind=cores rep=10
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=1
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=2
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=3
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=4
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=5
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=6
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=7
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=8
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=9
+mpi coletiva=bcast n=1792 p=32 nos=4 bind=cores rep=10
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=1
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=2
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=3
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=4
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=5
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=6
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=7
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=8
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=9
+mpi coletiva=bcast n=1792 p=64 nos=4 bind=threads rep=10
+Equivalencia OK em todas as linhas: n=1792 iteracoes=2979 volume_retido=3356079226 celulas_alagadas=1161016
+Sequencial (N=10): T1=46.0335s  frac_seq(s)=0.007163
+
+versao     coletiva     P nos    med(s)       min       max       S  Amdahl      E     comp  ver_med  ver_min   espera    troca
+mpi        allreduce    1   1   45.9913   45.9079   46.0348    1.00    1.00  1.001  45.6214   0.0071   0.0071   0.0000   0.0064
+mpi        allreduce    2   1   24.1663   24.1245   24.2051    1.90    1.99  0.952  22.7573   0.9636   0.1214   0.8386   0.0984
+mpi        allreduce    4   1   14.7490   14.6980   14.8407    3.12    3.92  0.780  12.2024   2.0882   0.0578   2.0260   0.1228
+mpi        allreduce    8   1   11.9225   11.9015   11.9528    3.86    7.62  0.483  11.2123   0.1820   0.0747   0.1110   0.1741
+mpi        allreduce   16   2    5.5545    5.5383    5.6122    8.29   14.45  0.518   4.2182   0.7829   0.3033   0.4688   0.2050
+mpi        allreduce   32   4    3.1752    3.1598    3.2150   14.50   26.19  0.453   1.4580   1.1317   0.3792   0.7547   0.2199
+mpi        allreduce   64   4    3.5708    3.5400    3.6242   12.89   44.10  0.201   1.3816   1.4815   0.5985   0.9021   0.2320
+mpi        bcast        8   1   11.9466   11.9209   11.9849    3.85    7.62  0.482  11.2143   0.2095   0.1067   0.1011   0.1676
+mpi        bcast       16   2    6.5582    6.5136    6.6815    7.02   14.45  0.439   4.3102   1.6768   1.1466   0.5264   0.2193
+mpi        bcast       32   4    6.9348    6.8736    7.2116    6.64   26.19  0.207   1.5059   4.7285   3.5911   1.1393   0.3429
+mpi        bcast       64   4   13.4175   13.1161   15.0783    3.43   44.10  0.054   1.4107  11.2890  10.3896   0.9416   0.2298
+sequencial nenhuma      1   1   46.0335   45.9981   46.1261    1.00    1.00  1.000  45.7048   0.0000   0.0000   0.0000   0.0000
+campanha concluida com sucesso

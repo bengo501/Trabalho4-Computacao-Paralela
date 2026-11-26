@@ -1,0 +1,1 @@
+resultado versao=sequencial coletiva=nenhuma p=1 n=360 semente=20260401 iteracoes=317 volume_retido=105899907 celulas_alagadas=37080 soma_cotas=2177610243 tempo=0.186918 t_serial=0.013367 t_paralelo=0.173552 frac_seq=0.071511
