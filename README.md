@@ -20,10 +20,10 @@ Na versão paralela, o rank 0 gera o relevo Z e distribui faixas horizontais con
 ## Estrutura
 
 src/           relevo.h, relevo.c, sequencial.c, fases_mpi.c, confere.c
-scripts/       campanha.sbatch, escolhe_n.py, resumir.py
-results/       runs.csv, raw/, lscpu.txt, nodes.txt, fig_speedup.png, fig_fases.png
-relatorio/     relatorio.pdf, montar_pdf.py, gerar_graficos.py, dados.py
-apresentacao/  apresentacao.pptx, montar.py, figuras/
+scripts/       campanha.sbatch, campanha_cargas.sbatch, escolhe_n.py, resumir.py
+results/       runs.csv, cargas.csv, raw/, raw_cargas/, slurm-*.out, lscpu.txt, nodes.txt, fig_*.png
+relatorio/     relatorio.pdf
+apresentacao/  apresentacao.pptx, figuras/
 
 ## Compilação e testes locais
 
@@ -62,28 +62,34 @@ Respeita a alocação exclusiva mínima que garante 1 processo por núcleo físi
 Submissão e resumo:
 
 sbatch scripts/campanha.sbatch
+sbatch scripts/campanha_cargas.sbatch
 python3 scripts/resumir.py results/runs.csv
 
 ## Resultados oficiais (n = 1792, T1 = 46,034 s, s = 0,72%)
 
-Todas as 120 execuções convergiram em exatas 2979 iterações, com 1161016 células alagadas e volume retido igual a 3356079226 (verificacao=OK em 100% das rodadas).
+Todas as 120 execuções oficiais convergiram em exatas 2979 iterações, com 1161016 células alagadas e volume retido igual a 3356079226 (verificacao=OK em 100% das rodadas).
 
-| P | Nós | Tp mediana (s) | Speed-up S | Teto Amdahl | Eficiência E |
-|---|-----|----------------|------------|-------------|--------------|
-| 1 | 1 | 45,991 | 1,00 | 1,00 | 1,00 |
-| 2 | 1 | 24,166 | 1,90 | 1,99 | 0,95 |
-| 4 | 1 | 14,749 | 3,12 | 3,92 | 0,78 |
-| 8 | 1 | 11,923 | 3,86 | 7,62 | 0,48 |
-| 16 | 2 | 5,555 | 8,29 | 14,45 | 0,52 |
-| 32 | 4 | 3,175 | 14,50 | 26,19 | 0,45 |
-| 64 | 4 | 3,571 | 12,89 | 44,10 | 0,20 |
+| P | Nós | Mediana (s) | Mínimo (s) | Máximo (s) | Speed-up S | Teto Amdahl | Eficiência E |
+|---|-----|-------------|------------|------------|------------|-------------|--------------|
+| 1 | 1 | 45,991 | 45,908 | 46,035 | 1,00 | 1,00 | 1,00 |
+| 2 | 1 | 24,166 | 24,124 | 24,205 | 1,90 | 1,99 | 0,95 |
+| 4 | 1 | 14,749 | 14,698 | 14,841 | 3,12 | 3,92 | 0,78 |
+| 8 | 1 | 11,923 | 11,902 | 11,953 | 3,86 | 7,62 | 0,48 |
+| 16 | 2 | 5,555 | 5,538 | 5,612 | 8,29 | 14,45 | 0,52 |
+| 32 | 4 | 3,175 | 3,160 | 3,215 | 14,50 | 26,19 | 0,45 |
+| 64 | 4 | 3,571 | 3,540 | 3,624 | 12,89 | 44,10 | 0,20 |
 
 Em P = 32, o menor tempo de verificação entre os processos foi verif_min = 0,379 s (custo puro do MPI_Allreduce) e a espera média pelo processo mais lento foi 0,752 s; em P = 64, a alternativa com P chamadas MPI_Bcast elevou verif_min de 0,599 s para 10,390 s (reduzindo S de 12,89 para 3,43).
 
-## Relatório e apresentação
+## Sensibilidade ao tamanho da carga (results/cargas.csv)
 
-python relatorio/montar_pdf.py
-python apresentacao/montar.py
+Além da campanha oficial na faixa recomendada de 30 a 60 s (n = 1792, 10 repetições), foram executadas campanhas complementares nos mesmos 4 nós exclusivos com carga leve (n = 1280) e carga pesada (n = 2304), 5 repetições por ponto:
+
+| N | Iterações | T1 mediana (s) | Fração s | S (P=8) | S (P=16) | S (P=32) | S (P=64) |
+|---|-----------|----------------|----------|---------|----------|----------|----------|
+| 1280 | 2137 | 16,12 | 1,05% | 4,49 | 8,68 | 11,11 | 10,26 |
+| 1792 | 2979 | 46,03 | 0,72% | 3,86 | 8,29 | 14,50 | 12,89 |
+| 2304 | 3841 | 102,65 | 0,53% | 4,05 | 7,52 | 16,24 | 14,24 |
 
 ## Uso de IA
 

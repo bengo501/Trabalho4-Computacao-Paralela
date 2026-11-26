@@ -1,0 +1,63 @@
+=== Iniciando carga N=1280 (5 repeticoes por configuracao) ===
+carga n=1280 sequencial rep=1
+carga n=1280 sequencial rep=2
+carga n=1280 sequencial rep=3
+carga n=1280 sequencial rep=4
+carga n=1280 sequencial rep=5
+carga n=1280 mpi p=8 nos=1 bind=cores rep=1
+carga n=1280 mpi p=8 nos=1 bind=cores rep=2
+carga n=1280 mpi p=8 nos=1 bind=cores rep=3
+carga n=1280 mpi p=8 nos=1 bind=cores rep=4
+carga n=1280 mpi p=8 nos=1 bind=cores rep=5
+carga n=1280 mpi p=16 nos=2 bind=cores rep=1
+carga n=1280 mpi p=16 nos=2 bind=cores rep=2
+carga n=1280 mpi p=16 nos=2 bind=cores rep=3
+carga n=1280 mpi p=16 nos=2 bind=cores rep=4
+carga n=1280 mpi p=16 nos=2 bind=cores rep=5
+carga n=1280 mpi p=32 nos=4 bind=cores rep=1
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=1280 mpi p=32 nos=4 bind=cores rep=2
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=1280 mpi p=32 nos=4 bind=cores rep=3
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=1280 mpi p=32 nos=4 bind=cores rep=4
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=1280 mpi p=32 nos=4 bind=cores rep=5
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=1280 mpi p=64 nos=4 bind=threads rep=1
+carga n=1280 mpi p=64 nos=4 bind=threads rep=2
+carga n=1280 mpi p=64 nos=4 bind=threads rep=3
+carga n=1280 mpi p=64 nos=4 bind=threads rep=4
+carga n=1280 mpi p=64 nos=4 bind=threads rep=5
+=== Iniciando carga N=2304 (5 repeticoes por configuracao) ===
+carga n=2304 sequencial rep=1
+carga n=2304 sequencial rep=2
+carga n=2304 sequencial rep=3
+carga n=2304 sequencial rep=4
+carga n=2304 sequencial rep=5
+carga n=2304 mpi p=8 nos=1 bind=cores rep=1
+carga n=2304 mpi p=8 nos=1 bind=cores rep=2
+carga n=2304 mpi p=8 nos=1 bind=cores rep=3
+carga n=2304 mpi p=8 nos=1 bind=cores rep=4
+carga n=2304 mpi p=8 nos=1 bind=cores rep=5
+carga n=2304 mpi p=16 nos=2 bind=cores rep=1
+carga n=2304 mpi p=16 nos=2 bind=cores rep=2
+carga n=2304 mpi p=16 nos=2 bind=cores rep=3
+carga n=2304 mpi p=16 nos=2 bind=cores rep=4
+carga n=2304 mpi p=16 nos=2 bind=cores rep=5
+carga n=2304 mpi p=32 nos=4 bind=cores rep=1
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=2304 mpi p=32 nos=4 bind=cores rep=2
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=2304 mpi p=32 nos=4 bind=cores rep=3
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=2304 mpi p=32 nos=4 bind=cores rep=4
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=2304 mpi p=32 nos=4 bind=cores rep=5
+srun: Warning: can't honor --ntasks-per-node set to 16 which doesn't match the requested tasks 32 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+carga n=2304 mpi p=64 nos=4 bind=threads rep=1
+carga n=2304 mpi p=64 nos=4 bind=threads rep=2
+carga n=2304 mpi p=64 nos=4 bind=threads rep=3
+carga n=2304 mpi p=64 nos=4 bind=threads rep=4
+carga n=2304 mpi p=64 nos=4 bind=threads rep=5
+Campanha de cargas concluida com sucesso.

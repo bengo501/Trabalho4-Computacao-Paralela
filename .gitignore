@@ -5,3 +5,7 @@ material_estudo_privado/
 Trabalho_4_Bernardo_Klein_Heitz.zip
 __pycache__/
 *.pyc
+relatorio/dados.py
+relatorio/gerar_graficos.py
+relatorio/montar_pdf.py
+apresentacao/montar.py
